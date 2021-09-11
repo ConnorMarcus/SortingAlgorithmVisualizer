@@ -5,7 +5,7 @@ import java.awt.event.ActionListener;
 
 public class SortingVisualiserGUI {
     private static final JFrame frame = new JFrame();
-    private static final JButton newArrayButton = new JButton("New Array");;
+    private static final JButton newArrayButton = new JButton("New Array");
     private static final JButton startButton = new JButton("Start");
 
     public void show() {
@@ -13,6 +13,10 @@ public class SortingVisualiserGUI {
         int choice = JOptionPane.showOptionDialog(null, "Choose a sorting algorithm:",
                 "Sorting Algorithm",
                 JOptionPane.DEFAULT_OPTION, JOptionPane.INFORMATION_MESSAGE, null, options, options[0]);
+
+        if (choice == -1) {
+            System.exit(0);
+        }
 
         RectanglePanel mainPanel = new RectanglePanel();
         newArrayButton.setPreferredSize(new Dimension(100, 50));
